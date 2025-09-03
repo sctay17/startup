@@ -1,6 +1,7 @@
 # CS 260 Notes
-I don't know what to write.
-I now know what to write. Hi!!
+9/3 -
+learned how to use git to clone, pull, push, commit
+whenever something is changed on the browser, make sure to commit changes then pull into the terminal
 [My startup - Simon](https://simon.cs260.click)
 
 ## Helpful links
