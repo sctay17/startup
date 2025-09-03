@@ -1,4 +1,4 @@
-# Your startup name here
+startup project
 
 [My Notes](notes.md)
 
