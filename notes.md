@@ -1,5 +1,6 @@
 # CS 260 Notes
 I don't know what to write.
+I now know what to write. Hi!!
 [My startup - Simon](https://simon.cs260.click)
 
 ## Helpful links
