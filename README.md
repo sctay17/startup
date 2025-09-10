@@ -1,8 +1,8 @@
-startup project
+# 🙉 ChoreChamp
 
 [My Notes](notes.md)
 
-A brief description of the application here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+This web application will be a calendar with weekly to-do lists. The weekly to-do lists will be used to create chores and will have a scoreboard and calculator for allowances. Admins create the to-do list and add objectives thereto. Admins are able to add viewers(users that cannot edit list but can request task completion). Admins can score tasks completed by users, giving points to the users, which will be referenced later when calculating allowance at the end of the week.
 
 
 > [!NOTE]
@@ -18,45 +18,53 @@ A brief description of the application here. Lorem ipsum dolor sit amet, consect
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] Proper use of Markdown
-- [ ] A concise and compelling elevator pitch
-- [ ] Description of key features
-- [ ] Description of how you will use each technology
-- [ ] One or more rough sketches of your application. Images must be embedded in this file using Markdown image references.
+- [x] Proper use of Markdown
+- [x] A concise and compelling elevator pitch
+- [x] Description of key features
+- [x] Description of how you will use each technology
+- [x] One or more rough sketches of your application. Images must be embedded in this file using Markdown image references.
 
 ### Elevator pitch
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Ever wish your kids were excited to get their chores done? Meet ChoreChamp — the weekly calendar app that turns to-do lists into teamwork, points, and cold hard cash! Admins ( parents) create tasks, viewers (kids) complete them, and everyone watches the live scoreboard change in real time. Complete tasks, score points, track progress, and cash in at the end of the week. Your kids will be excited when a new task pops up! Use ChoreChamp and your kids will be racing to get their chores done!
 
 ### Design
 
-![Design image](placeholder.png)
+![Design image](startup_design.png)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Here is a diagram that shows administrators would interact with the website in order to set up tasks and score tasks, and how viewers are able to accept and complete tasks.
 
 ```mermaid
 sequenceDiagram
-    actor You
-    actor Website
-    You->>Website: Replace this with your design
+    actor Parent
+    actor Child
+    Parent->>Website: Add task
+    Website -->>Child: Task added
+    Child->>Website: Task completed
+    Website -->>Parent: Task completed
+    Parent->>Website: Task scored
+    Website -->>Child: Scoreboard updated
 ```
 
 ### Key features
 
-- Describe your key feature
-- Describe your key feature
-- Describe your key feature
+- Secure login over HTTPS
+- Administrator can create tasks and assign them to a day or week
+- Administrator can give a point value to each task
+- Viewers can select tasks for approval and scoring
+- Scoreboard for all users updated in real-time
+- Allowance is calculated in real-time and locked at the end of the week
 
 ### Technologies
 
 I am going to use the required technologies in the following ways.
 
-- **HTML** - Description here
-- **CSS** - Description here
-- **React** - Description here
-- **Service** - Description here
-- **DB/Login** - Description here
-- **WebSocket** - Description here
+- **HTML** - HTML will structure the web application's user interface: the layout of the weekly calendar, to-do list items, task completion forms, user login/register forms, and the scoreboard.
+- **CSS** - CSS will style the calendar, weekly to-do list, color the tasks based on completion (green = finished, yellow = pending approval, gray = needing completion), and design the scoreboard.
+- **React** - React will take care of the login, live task updates, scoreboard updates, and allowance updates. It will also allow admins and viewers to see previous months/weeks.
+- **Service** - Backend service with endpoints for login, retrieving tasks(viewers), submitting tasks for approval (viewers), retrieving pending tasks (admins), retrieving scoreboard updates, and retrieving end-of-week allowances.
+- **DB/Login** - Store admins and viewers, tasks, pending approval tasks, and completed tasks in database. Register and login for users.
+- **WebSocket** - Takes care of updating website whenever a change is made, i.e. new task, pending approval task, task completion, scoreboard update, allowance finalized.
 
 ## 🚀 AWS deliverable
 
